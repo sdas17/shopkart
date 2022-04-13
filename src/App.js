@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+// import React, { createContext, useState } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// import Count from './Count';
+// import Display from './Display';
+// export const store = createContext();
+// const App = () => {
+//   const [data, setData] = useState([
+//     {
+//       brandname: "Nokia"
+//     },
+//     {
+//       brandname: "Realme"
+//     },
+//     {
+//       brandname: "Mi"
+//     }
+//   ])
+//   return (
+//     <store.Provider value={[data, setData]}>
+
+//       <center>
+//         <Count />
+//         <Display />
+//         {/* <button onClick={() => setData(data + 1)}>Increment</button> */}
+//       </center>
+//     </store.Provider>
+
+//   );
+// }
+// context api class component 
+import React, { Component } from "react";
+import ComponentA from "./ComponentA";
+import { UserProvider } from "./UserContext";
+class App extends Component {
+  render() {
+    return (
+      <UserProvider value="subham" LAST ="DAS">
+<ComponentA/>
+      </UserProvider>
+    );
+  }
 }
+
 
 export default App;
